@@ -4,7 +4,7 @@ with recipes as (select * from {{ref('stg_recipes')}}
 , trials as (select * from {{ref('stg_recipe_trials')}}
 )
 
-select r.recipe_name
+select distinct r.recipe_name
 , r.category
 ,t.version
 ,t.trial_date
