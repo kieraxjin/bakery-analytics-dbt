@@ -1,8 +1,11 @@
-Bakery Analytics: dbt Project Documentation
-Project Overview
+# Bakery Analytics: dbt Project Documentation
+
+# Project Overview
+
 This project builds a data pipeline to track recipe performance, ingredient costs, and baking trial success rates for a professional bakery.
 
-Phase 1: Infrastructure & Data Loading
+## Phase 1: Infrastructure & Data Loading
+
 The goal of this phase is to establish the physical storage and move raw data into the cloud.
 
 1. Snowflake Environment Setup
@@ -16,7 +19,8 @@ The goal of this phase is to establish the physical storage and move raw data in
    recipes.csv: Contains static recipe information (ID, Name, Category, URL).
    recipe_trials.csv: Contains logs of every bake attempt (ID, Result, Rating, Time spent).
 
-Phase 2: Data Transformation (dbt Modeling)
+## Phase 2: Data Transformation (dbt Modeling)
+
 The goal of this phase is to use SQL logic to clean, rename, and join data for reporting.
 
 1. Staging Layer (stg\_ models)
@@ -29,7 +33,8 @@ The goal of this phase is to use SQL logic to clean, rename, and join data for r
    Logic: Joined recipes (Dimensions) with stg_trials (Facts) using recipe_id.
    Output: A single table showing the Recipe Name alongside its Average Rating and Success Rate.
 
-Phase 3: Quality Control & Automation
+## Phase 3: Quality Control & Automation
+
 Ensuring the data is accurate and the pipeline is reliable.
 Data Lineage: Using the dbt Lineage Graph to visualize how data flows from a CSV file to a final report.
 Testing: Using dbt test to ensure that critical fields (like recipe_id) are never empty and that ratings stay within a 1–5 scale.
