@@ -1,1 +1,2 @@
-select * from fct_recipe_performance.sql;
+select * from stg_recipe_trials;
+
