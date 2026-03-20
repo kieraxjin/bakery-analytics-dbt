@@ -4,28 +4,14 @@ with recipes as (select
     category
 from {{ ref('recipes') }})
 
-, trials as (select
-    trial_id
-    ,recipe_id
-    ,trial_date
-    ,hours_spent
-    ,outcome
-    ,rating
+, trials as (select *
+ 
 from {{ ref('recipe_trials') }}) 
 
-select
-    r.recipe_id
-    ,r.recipe_name
-    ,r.category
-    ,t.trial_id
-    ,t.trial_date
-    ,t.hours_spent
-    ,t.outcome
-    ,t.rating
+select *
 from recipes r
 left join trials t
 on r.recipe_id = t.recipe_id
-
 
 
 

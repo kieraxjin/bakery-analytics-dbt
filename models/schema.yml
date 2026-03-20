@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_recipe_performance
+    description: "Final analytics table showing success rates for each bakery recipe."
+    columns:
+      - name: recipe_name
+        description: "The name of the cookie or bread."
+        tests:
+          - unique
+          - not_null
+
+      - name: success_rate
+        description: "Percentage of trials that resulted in a 'success' status."
+        tests:
+          - not_null

@@ -9,7 +9,7 @@ select
     count(t.trial_id) as total_attempts,
     round(avg(t.rating), 1) as avg_rating,
     -- This calculates the success rate percentage
-    round(sum(case when t.clean_outcome = 'Success' then 1 else 0 end) * 1.0 / count(t.trial_id), 2) as success_rate
+    round(sum(case when t.trial_outcome = 'Success' then 1 else 0 end) * 1.0 / count(t.trial_id), 2) as success_rate
 from recipes r
 left join trials t on r.recipe_id = t.recipe_id
 group by 1
