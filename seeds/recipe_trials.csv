@@ -4,4 +4,4 @@ trial_id,recipe_id,trial_date,hours_spent,outcome,version,rating,adjustment_made
 3,3,2025-06-17,1.5,Success,1,4,na
 4,4,2026-03-17,5.0,Failed,1,2,na
 5,5,2025-06-17,0.5,Success,1,5,na
-6,4,2026-03-18,5.0,Succsesde,2,2,used instant yeast instead of active yeast
+6,4,2026-03-18,5.0,Succsesde,2,5,used instant yeast instead of active yeast
