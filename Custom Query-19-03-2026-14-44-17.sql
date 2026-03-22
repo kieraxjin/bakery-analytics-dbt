@@ -6,3 +6,21 @@ select * from stg_ingredients;
 -- TWO: RATING DIFFERENCE BETWEEN VERSIONS 
 select * from fct_recipe_evolution;
 
+-- THREE: INGREDIENTS PER TRIAL
+with ingredient_list as (select trial_id 
+,string_agg(upper(substring(ingredient_name, 1,1)) || lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || ingredient_amount || ' ' || unit ,E'\n' )  as n
+-- , string_agg( upper(substring(ingredient_name, 1,1)) + lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || ingredient_amount || ' ' || unit  ,E'\n' ) as ingredients
+from stg_ingredients
+group by trial_id )
+
+select * from ingredient_list;
+
+from ingredient_list i
+join stg_recipe_trials r on r.trial_id = i.trial_id
+group by r.trial_id, recipe_id
+
+
+
+
+
+
