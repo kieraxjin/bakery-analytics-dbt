@@ -3,7 +3,7 @@ with recipes as (select
     cast(recipe_name as varchar) as recipe_name,
     cast(category as varchar) as category
 
-from {{ ref('recipes') }})
+from {{ ref('cleaned_recipes') }})
 
 
 select * from recipes 
