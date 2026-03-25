@@ -13,7 +13,16 @@ with ingredient_list as (select trial_id
 from stg_ingredients
 group by trial_id )
 
-select * from ingredient_list;
+select s.recipe_name
+,s.category
+,s.recipe_url
+-- select r.*
+,i.*
+
+from ingredient_list i
+join stg_recipe_trials r on i.trial_id = r.trial_id
+join stg_recipes s on r.recipe_id = s.recipe_id;
+
 
 
 

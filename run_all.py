@@ -40,7 +40,7 @@ for file_name in files:
         df['recipe_url'] = df['recipe_url'].replace('na', '')
     
     if 'ingredient_name' in df.columns:
-        df['ingredient_name'] = df['ingredient_name'].str.title()
+        df['ingredient_name'] = df['ingredient_name'].str.title().str.strip()
         
     if 'ingredient_amount' in df.columns:
         df['ingredient_amount'] = df['ingredient_amount'].apply(convert_fractions)
