@@ -3,7 +3,7 @@ with raw_ingredients as (select *
 from {{ ref('cleaned_ingredients') }})
 
 select cast(trial_id as integer) as trial_id
-,lower(trim(ingredient_name)) as ingredient_name
+,cast (ingredient_name as varchar) as ingredient_name
 ,amount as ingredient_amount
 ,case when lower(unit) ilike ('%g') then 'grams'
     when lower(unit) ilike ('%cup%') then 'cups'
