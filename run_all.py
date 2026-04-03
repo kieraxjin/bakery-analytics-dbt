@@ -4,18 +4,28 @@ import subprocess
 import os
 
 
-def convert_fractions(amount):
-    amount = str(amount).strip()
+def convert_fractions(val):
+    val = str(val).lower().strip()
+
+    #handling na or empty cells 
+    if val in ['na', '', 'none', 'nan']: 
+        return 0.0
+
     try: 
-        if ' ' in amount:
-            val = amount.split(' ')
-            return float(val[0] + eval(val[1]))
+        #1.handle spilt with x 
+        if 'x' in val:
+            val = val.split('x')
+            return round(float(val[0]) * eval(val[1]),2)
         
-        if '/' in amount: 
-            return eval(amount)
-        return float(amount)
+        if ' ' in val:
+            val = val.split(' ')
+            return round(float(val[0]) + eval(val[1]),2)
+        
+        if '/' in val: 
+            return eval(val)
+        return round(float(val),2)
     except:
-        return amount
+        return round(val,2)
 
 
 
@@ -25,6 +35,8 @@ files = ['recipe_trials.csv', 'ingredients.csv', 'recipes.csv']
 for file_name in files:
 
     df = pd.read_csv(f'seeds/{file_name}')
+
+    # print(df.columns)
     
     #clean columns 
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
@@ -42,8 +54,8 @@ for file_name in files:
     if 'ingredient_name' in df.columns:
         df['ingredient_name'] = df['ingredient_name'].str.title().str.strip()
         
-    if 'ingredient_amount' in df.columns:
-        df['ingredient_amount'] = df['ingredient_amount'].apply(convert_fractions)
+    if 'amount' in df.columns:
+        df['amount'] = df['amount'].apply(convert_fractions)
 
     # 4. SAVE (Create a 'cleaned_' version of each)
     df.to_csv(f'seeds/cleaned_{file_name}', index=False)
@@ -53,6 +65,6 @@ for file_name in files:
 
 
 #RUN DBT 
-subprocess.run(["dbt", "seed"])
+subprocess.run(["dbt", "seed", "--full-refresh"])
 subprocess.run(["dbt", "run"])
 print("SUCCESS: Your project is updated!")

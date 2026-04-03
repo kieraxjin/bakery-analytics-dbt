@@ -1,17 +1,17 @@
 trial_id,ingredient_name,amount,unit
-6,Instant Yeast,1,teaspoon
-6,King Arthur Unbleached Bread Flour,1 3/4, cups 
-6,King Arthur Unbleached Cake Flour,2/3,cup
-6,Milk (Cold Or Room Temperature),1,cup
-6,Granulated Sugar,1,tablespoon
-6,Unsalted Butter (At Room Temperature),1,tablespoon
-6,Salt Or Red Miso,1,teaspoon 
-7,Cake Flour,60,g
-7,Water,182 1/2,g
-7,Sugar,13,g
-7,Salt,5,g
-7,Non-Fat Milk Powder,15,g
-7,Unsalted Butter (Straight From Fridge),20,g
-7,Instant Dry Yeast,3 1/2,g
-7,Butter Chunks,12 x 15,g
-7,Pretzel Salt,na,na
+6,Instant Yeast,1.0,teaspoon
+6,King Arthur Unbleached Bread Flour,1.75, cups 
+6,King Arthur Unbleached Cake Flour,0.6666666666666666,cup
+6,Milk (Cold Or Room Temperature),1.0,cup
+6,Granulated Sugar,1.0,tablespoon
+6,Unsalted Butter (At Room Temperature),1.0,tablespoon
+6,Salt Or Red Miso,1.0,teaspoon 
+7,Cake Flour,60.0,g
+7,Water,182.5,g
+7,Sugar,13.0,g
+7,Salt,5.0,g
+7,Non-Fat Milk Powder,15.0,g
+7,Unsalted Butter (Straight From Fridge),20.0,g
+7,Instant Dry Yeast,3.5,g
+7,Butter Chunks,180.0,g
+7,Pretzel Salt,0.0,na
