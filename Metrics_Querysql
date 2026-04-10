@@ -22,7 +22,7 @@ where recipe_name in ('Salt Bread')
 order by version
 
 
-⚙️ -- 2. PROCESS (what you did)
+-- 2. PROCESS (what you did)
 	-- •	proof_time_min → how long you proofed
 	-- •	bake_temp → oven temperature
 	-- •	bake_time_min → how long you baked
