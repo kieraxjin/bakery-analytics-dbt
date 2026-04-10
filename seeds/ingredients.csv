@@ -6,6 +6,7 @@ trial_id,ingredient_name,amount,unit
 6,Granulated Sugar,1,tablespoon
 6,Unsalted Butter (at room temperature),1,tablespoon
 6,Salt or Red Miso,1,teaspoon 
+7,King Arthur Unbleached Bread Flour,200,g
 7,cake flour,60,g
 7,water,182 1/2,g
 7,sugar,13,g
@@ -15,6 +16,13 @@ trial_id,ingredient_name,amount,unit
 7,instant dry yeast,3 1/2,g
 7,butter chunks,12 x 15,g
 7,pretzel salt,na,na
-
+9,King Arthur Unbleached Bread Flour,400,g
+9,Cake Flour,100,g
+9,water,330,g
+9,non-fat milk powder,30,g
+9,Granulated Sugar,30,g
+9,Unsalted Butter (at room temperature),30,g
+9,instant dry yeast,6,g
+9,Salt or Red Miso,10,g
 
 

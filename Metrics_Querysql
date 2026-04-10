@@ -1,28 +1,54 @@
--- ONE: SEE DATA IN ALL TABLS 
+-- ONE: SEE DATA IN ALL TABLES 
 select * from stg_recipes;
 select * from stg_recipe_trials;
 select * from stg_ingredients;
 
--- TWO: RATING DIFFERENCE BETWEEN VERSIONS 
-select * from fct_recipe_evolution;
+--- 1. INPUT (your setup)
+-- 	•	hydration_pct → how wet your dough is (hydration % = (water ÷ flour) × 100)
+-- 	•	dough_temp → after mixing (VERY important)
+-- 	•	proof_temp → temperature while proofing
+
+select * 
+from fct_recipe_input
+where recipe_name in ('Salt Bread')
+order by version
 
 
--- THREE: INGREDIENTS PER TRIAL
+⚙️ -- 2. PROCESS (what you did)
+	-- •	proof_time_min → how long you proofed
+	-- •	bake_temp → oven temperature
+	-- •	bake_time_min → how long you baked
+
+
+-- 3. RESULT (what happened)
+-- 	•	outcome → success or failed
+-- 	•	rating → 1–5 (your overall judgment)
+-- 	•	crispiness_score → 1–5
+-- 	•	lightness_score → 1–5
+
+
+
+-- THREE: INGREDIENTS NEEDED BASED ON BATCH SIZE
 with ingredient_list as (select trial_id 
-,string_agg(upper(substring(ingredient_name, 1,1)) || lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || ingredient_amount || ' ' || unit ,E'\n' )  as n
--- , string_agg( upper(substring(ingredient_name, 1,1)) + lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || ingredient_amount || ' ' || unit  ,E'\n' ) as ingredients
+,string_agg(upper(substring(ingredient_name, 1,1)) || lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || amount_half_batch || ' ' || unit ,E'\n' )  as half_batch
+,string_agg(upper(substring(ingredient_name, 1,1)) || lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || ingredient_amount || ' ' || unit ,E'\n' )  as full_batch
+,string_agg(upper(substring(ingredient_name, 1,1)) || lower(substring(ingredient_name, 2, len(ingredient_name)- 1 )) || ' ' || amount_double_batch || ' ' || unit ,E'\n' )  as double_batch
+
 from stg_ingredients
 group by trial_id )
 
--- select s.recipe_name
--- ,s.category
--- ,s.recipe_url
--- -- select r.*
-select *
+
+select s.recipe_id 
+,s.recipe_name
+,r.trial_id
+,r.trial_date
+,i.half_batch
+,i.full_batch
+,i.double_batch
 
 from ingredient_list i
--- join stg_recipe_trials r on i.trial_id = r.trial_id
--- join stg_recipes s on r.recipe_id = s.recipe_id;
+join stg_recipe_trials r on i.trial_id = r.trial_id
+join stg_recipes s on r.recipe_id = s.recipe_id;
 
 
 
