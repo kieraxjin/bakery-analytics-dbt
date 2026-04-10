@@ -8,7 +8,15 @@ select * from stg_ingredients;
 -- 	•	dough_temp → after mixing (VERY important)
 -- 	•	proof_temp → temperature while proofing
 
-select * 
+select recipie_name 
+,category
+,version
+,trial_date
+,total_water
+,total_flour
+,hydration_pct
+,dough_temp
+,proof_temp
 from fct_recipe_input
 where recipe_name in ('Salt Bread')
 order by version
@@ -19,6 +27,16 @@ order by version
 	-- •	bake_temp → oven temperature
 	-- •	bake_time_min → how long you baked
 
+select recipe_name 
+,category
+,version
+,trial_date
+,proofing_time
+,baking_temp
+,baking_time
+from fct_recipe_input
+where recipe_name in ('Salt Bread')
+order by version
 
 -- 3. RESULT (what happened)
 -- 	•	outcome → success or failed
@@ -26,7 +44,17 @@ order by version
 -- 	•	crispiness_score → 1–5
 -- 	•	lightness_score → 1–5
 
-
+select recipe_name 
+,category
+,version
+,trial_date
+,trial_outcome
+,rating
+,crispiness_score
+,lightness_score
+from fct_recipe_input
+where recipe_name in ('Salt Bread')
+order by version
 
 -- THREE: INGREDIENTS NEEDED BASED ON BATCH SIZE
 with ingredient_list as (select trial_id 

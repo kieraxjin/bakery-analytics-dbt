@@ -37,9 +37,15 @@ select
    ,round((i.total_water / nullif(i.total_flour, 0)) * 100, 1 ) || '%' as hydration_pct
     ,t.dough_temp
     ,t.proofing_temp
+	,t.proofing_time
+	,t.baking_temp
+	,t.baking_time
     ,t.adjustment_made
+	,t.trial_outcome
     ,t.rating
     ,t.rating - lag(t.rating) over (partition by t.recipe_id order by t.version) as rating_delta
+	,t.crispiness_score
+	,t.lightness_score
 from trials t 
 left join recipes r on t.recipe_id = r.recipe_id 
 left join ingredient_summary i on t.trial_id = i.trial_id

@@ -9,5 +9,7 @@ select cast(trial_id as integer) as trial_id
         when lower(outcome) ilike 'fail%' then 'Failed' 
         else 'Other' 
     end as trial_outcome
+    ,crispiness_score
+	,lightness_score
 
 from {{ ref('cleaned_recipe_trials') }}
