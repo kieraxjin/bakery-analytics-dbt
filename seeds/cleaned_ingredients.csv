@@ -1,26 +1,42 @@
-trial_id,ingredient_name,amount,unit
-6,Instant Yeast,1.0,teaspoon
-6,King Arthur Unbleached Bread Flour,1.75, cups 
-6,King Arthur Unbleached Cake Flour,0.6666666666666666,cup
-6,Milk (Cold Or Room Temperature),1.0,cup
-6,Granulated Sugar,1.0,tablespoon
-6,Unsalted Butter (At Room Temperature),1.0,tablespoon
-6,Salt Or Red Miso,1.0,teaspoon 
-7,King Arthur Unbleached Bread Flour,200.0,g
-7,Cake Flour,60.0,g
-7,Water,182.5,g
-7,Sugar,13.0,g
-7,Salt,5.0,g
-7,Non-Fat Milk Powder,15.0,g
-7,Unsalted Butter (Straight From Fridge),20.0,g
-7,Instant Dry Yeast,3.5,g
-7,Butter Chunks,180.0,g
-7,Pretzel Salt,0.0,na
-9,King Arthur Unbleached Bread Flour,400.0,g
-9,Cake Flour,100.0,g
-9,Water,330.0,g
-9,Non-Fat Milk Powder,30.0,g
-9,Granulated Sugar,30.0,g
-9,Unsalted Butter (At Room Temperature),30.0,g
-9,Instant Dry Yeast,6.0,g
-9,Salt Or Red Miso,10.0,g
+trial_id,ingredient_name,amount,unit,ingredient_id
+6,Instant Yeast,1.0,teaspoon,1
+6,King Arthur Unbleached Bread Flour,1.75, cups ,2
+6,King Arthur Unbleached Cake Flour,0.6666666666666666,cup,3
+6,Milk (Cold Or Room Temperature),1.0,cup,4
+6,Granulated Sugar,1.0,tablespoon,5
+6,Unsalted Butter (At Room Temperature),1.0,tablespoon,6
+6,Salt Or Red Miso,1.0,teaspoon ,7
+7,King Arthur Unbleached Bread Flour,200.0,g,8
+7,Cake Flour,60.0,g,9
+7,Water,182.5,g,10
+7,Sugar,13.0,g,11
+7,Salt,5.0,g,12
+7,Non-Fat Milk Powder,15.0,g,13
+7,Unsalted Butter (Straight From Fridge),20.0,g,14
+7,Instant Dry Yeast,3.5,g,15
+7,Butter Chunks,180.0,g,16
+7,Pretzel Salt,0.0,na,17
+9,King Arthur Unbleached Bread Flour,400.0,g,18
+9,Cake Flour,100.0,g,19
+9,Water,330.0,g,20
+9,Non-Fat Milk Powder,30.0,g,21
+9,Granulated Sugar,30.0,g,22
+9,Unsalted Butter (At Room Temperature),30.0,g,23
+9,Instant Dry Yeast,6.0,g,24
+9,Salt Or Red Miso,10.0,g,25
+10,King Arthur Unbleached Bread Flour,200.0,g,26
+10,Cake Flour,50.0,g,27
+10,Water,165.0,g,28
+10,Non-Fat Milk Powder,15.0,g,29
+10,Granulated Sugar,15.0,g,30
+10,Unsalted Butter (At Room Temperature),15.0,g,31
+10,Instant Dry Yeast,3.0,g,32
+10,Salt Or Red Miso,5.0,g,33
+11,King Arthur Unbleached Bread Flour,200.0,g,34
+11,Cake Flour,50.0,g,35
+11,Water,165.0,g,36
+11,Non-Fat Milk Powder,15.0,g,37
+11,Granulated Sugar,15.0,g,38
+11,Unsalted Butter (At Room Temperature),15.0,g,39
+11,Instant Dry Yeast,3.0,g,40
+11,Salt Or Red Miso,5.0,g,41
