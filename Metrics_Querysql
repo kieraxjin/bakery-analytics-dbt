@@ -8,18 +8,20 @@ select * from stg_ingredients;
 -- 	•	dough_temp → after mixing (VERY important)
 -- 	•	proof_temp → temperature while proofing
 
-select recipie_name 
+select recipe_name 
+,recipe_id
 ,category
+,trial_id
 ,version
 ,trial_date
 ,total_water
 ,total_flour
 ,hydration_pct
 ,dough_temp
-,proof_temp
+,proofing_temp
 from fct_recipe_input
-where recipe_name in ('Salt Bread')
-order by version
+where recipe_name like ('Salt Bread%')
+order by trial_date
 
 
 -- 2. PROCESS (what you did)
@@ -35,8 +37,8 @@ select recipe_name
 ,baking_temp
 ,baking_time
 from fct_recipe_input
-where recipe_name in ('Salt Bread')
-order by version
+where recipe_name like ('Salt Bread%')
+order by trial_date
 
 -- 3. RESULT (what happened)
 -- 	•	outcome → success or failed
@@ -52,9 +54,10 @@ select recipe_name
 ,rating
 ,crispiness_score
 ,lightness_score
+,adjustment_made
 from fct_recipe_input
-where recipe_name in ('Salt Bread')
-order by version
+where recipe_name like ('Salt Bread%')
+order by trial_date
 
 -- THREE: INGREDIENTS NEEDED BASED ON BATCH SIZE
 with ingredient_list as (select trial_id 
@@ -77,7 +80,6 @@ select s.recipe_id
 from ingredient_list i
 join stg_recipe_trials r on i.trial_id = r.trial_id
 join stg_recipes s on r.recipe_id = s.recipe_id;
-
 
 
 

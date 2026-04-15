@@ -15,11 +15,11 @@ trials as (
 ingredient_summary as (
     select 
         trial_id
-        ,sum(case when ingredient_name ilike '%Flour%' and unit ilike 'cups' then ingredient_amount * 236
-				   when ingredient_name ilike '%Flour%' and unit = 'grams' then ingredient_amount * 120 end) as total_flour
+        ,sum(case when ingredient_name ilike '%Flour%' and unit ilike 'cups' then ingredient_amount * 120
+				   when ingredient_name ilike '%Flour%' and unit = 'grams' then ingredient_amount end)  as total_flour
        
 	    ,sum(case when ingredient_name ilike '%Water%' and unit ilike 'cups' then ingredient_amount * 236
-		         when ingredient_name ilike '%Water%' and unit = 'grams' then ingredient_amount * 120  end ) as total_water
+		         when ingredient_name ilike '%Water%' and unit = 'grams' then ingredient_amount  end )  as total_water
     from {{ref('stg_ingredients')}}
     group by trial_id
 )
@@ -28,12 +28,14 @@ ingredient_summary as (
 
 select  
     r.recipe_name
+    ,r.recipe_id
     ,r.category
     ,t.version
+    ,t.trial_id
     ,t.trial_date
 	,t.rating
-	,i.total_water
-	,i.total_flour
+	,i.total_water || ' grams' as total_water
+	,i.total_flour || ' grams' as total_flour
    ,round((i.total_water / nullif(i.total_flour, 0)) * 100, 1 ) || '%' as hydration_pct
     ,t.dough_temp
     ,t.proofing_temp
