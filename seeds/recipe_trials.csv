@@ -8,5 +8,6 @@ trial_id,recipe_id,trial_date,hours_spent,outcome,version,rating,adjustment_made
 7,7,2026-03-24,4.0,Success,3,4.0,tried new recipe,na,na,na,na,na,na,na,na
 8,7,2026-03-30,4.0,Success,4,4.0,measured butter,70,na,na,400,12 mins,20 spritz,3,1
 9,7,2026-04-06,4.5,Success,5,4.5,new recipe room temp water,75,1hr 15m 20m,na,400,15 mins,20 spritz,4,2
-10,7,2026-04-06,4.5,Success,5,4.5,rolled into balls proofed for 15 mins. shaped bread and proofed for 15 mins,80,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,4,2
-,7,2026-04-14,4.5,Success,5,,used conv roast for crispier top ,78,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,,
+10,7,2026-04-06,4.5,Success,6,4.5,rolled into balls proofed for 15 mins. shaped bread and proofed for 15 mins,80,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,4,2
+,7,2026-04-14,4.5,Success,7,4.5,used conv roast for crispier top ,78,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,4,2
+,7,2026-04-25,4.5,Success,8,4.7,put water tray in for 10 mins while baking & brush butter on top right after taking it out ,78,1hr 15m | 15 min | 20 min,83.5,400,14 mins,20 spritz,4.5,3
