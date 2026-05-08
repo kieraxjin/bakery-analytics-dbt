@@ -11,3 +11,4 @@ trial_id,recipe_id,trial_date,hours_spent,outcome,version,rating,adjustment_made
 10,7,2026-04-06,4.5,Success,6,4.5,rolled into balls proofed for 15 mins. shaped bread and proofed for 15 mins,80,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,4,2
 11,7,2026-04-14,4.5,Success,7,4.5,used conv roast for crispier top ,78,1hr 15m | 15 min | 20 min,83.5,400,15 mins,20 spritz,4,2
 12,7,2026-04-25,4.5,Success,8,4.7,put water tray in for 10 mins while baking & brush butter on top right after taking it out ,78,1hr 15m | 15 min | 20 min,83.5,400,14 mins,20 spritz,4.5,3
+13,8,2026-05-07,4.5,Success,9,4.8,higher heat started preheat at 500 degrees F and then reduced to 405 degrees 5 ,78,1hr 15m | 15 min | 20 min,83.5,400,11 mins 405 then 7 mins 385,20 spritz,4.8,3
